@@ -25,21 +25,26 @@ These instructions will help you set up a copy of this project locally. To get a
 ### Installation
 
 1. Clone the repo
+
 ```git clone https://github.com/Katrinasms/React-quiz-app-template.git```
 
 2. Navigate into the cloned directory
+
 ```cd react-native-quiz-app```
 
 3. Install NPM packages
+
 ```npm install```
 
 4. If you are running the app on iOS, navigate to the iOS folder and install pods
+
 ```cd ios && pod install && cd ..```
 
 5. Run the app on iOS
 ```npx react-native run-ios```
 
 or Android
+
 ```npx react-native run-android```
 
 
