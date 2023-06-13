@@ -50,7 +50,7 @@ export default function App() {
             Animated.timing(progress, {
             
                 toValue: currentQuestionIndex+2,
-                duration: 1000,
+                duration: 2000,
                 useNativeDriver: false
             }),
             Animated.sequence([
@@ -61,7 +61,7 @@ export default function App() {
                 }),
                 Animated.timing(fadeAnim,{
                     toValue: 1,
-                    duration: 1000,
+                    duration: 1900,
                     useNativeDriver: false})
               ])
         ]).start();
@@ -75,19 +75,31 @@ export default function App() {
         setCurrentOptionSelected(null);
         setCorrectOption(null);
         setIsOptionsDisabled(false);
+        
     }
 
     const startQuiz = () => {
-        Animated.timing(fadeAnim,{
-            toValue: 1,
-            duration: 1000,
-            useNativeDriver: false
-        }).start();
+        // Animated.timing(fadeAnim,{
+        //     toValue: 1,
+        //     duration: 1000,
+        //     useNativeDriver: false
+        // }).start();
+        Animated.sequence([
+            Animated.timing(fadeAnim,{
+                toValue: 0,
+                duration: 100,
+                useNativeDriver: false
+            }),
+            Animated.timing(fadeAnim,{
+                toValue: 1,
+                duration: 1900,
+                useNativeDriver: false})
+          ]).start();
 
         
         Animated.timing(progress, {
             toValue: currentQuestionIndex+1,
-            duration: 1000,
+            duration: 2000,
             useNativeDriver: false,
         }).start();
 
@@ -309,21 +321,23 @@ export default function App() {
                     padding: 20,
                     alignItems: 'center'
                 }}>
-                    <Text style={{fontSize: 30, fontWeight: 'bold'}}>Your Score</Text>
+                    <Text style={{fontSize: 30}}>Your Score</Text>
 
                     <View style={{
                         flexDirection: 'row',
                         justifyContent: 'flex-start',
                         alignItems: 'center',
-                        marginVertical: 20
+                        marginVertical: 30
                     }}>
                         <Text style={{
-                            fontSize: 30,
-                            color: score> (allQuestions.length/2) ? COLORS.success : COLORS.error
+                            fontSize: 100,
+                            color: COLORS.black,
+                            fontWeight: 'bold'
                         }}>{score}</Text>
                         <Text style={{
-                            fontSize: 20, color: COLORS.black
-                        }}>/ { allQuestions.length }</Text>
+                            fontSize: 100, color: COLORS.black,
+                            fontWeight: 'bold'
+                        }}> / { allQuestions.length }</Text>
                     </View>
                     {/* Retry Quiz button */}
                     <TouchableOpacity
@@ -338,7 +352,7 @@ export default function App() {
                     }}>
                         <Text style={{
                             textAlign: 'center', color: COLORS.white, fontSize: 20
-                        }}>Retry Quiz</Text>
+                        }}>Retry</Text>
                     </TouchableOpacity>
 
                 </View>

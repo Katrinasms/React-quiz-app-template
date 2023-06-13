@@ -2,6 +2,8 @@
 
 This repository contains a dynamic quiz application created with React Native. It features animated buttons and a progress bar to provide a unique and interactive user experience.
 
+![App Demo](./assets/react_quiz_app_template.gif)
+
 ## Features
 
 - **Animated Buttons:** The app uses React Native's animation framework to produce smooth, visually engaging transitions and feedback upon user interaction.
