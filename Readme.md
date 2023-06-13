@@ -41,6 +41,7 @@ These instructions will help you set up a copy of this project locally. To get a
 ```cd ios && pod install && cd ..```
 
 5. Run the app on iOS
+
 ```npx react-native run-ios```
 
 or Android
